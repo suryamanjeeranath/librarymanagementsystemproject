@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Issue Book</title>
+    <style>
+
+        .x{
+            color: red;
+            font-size: 20px;
+            margin-left: 100px;
+        }
+        body{
+            background: lightblue;
+        }
+        </style>
+
+</head>
+
+<body>
+<h1 style="  position: absolute; left: 400px; top: 130px; color: red">ISSUE BOOK</h1>
+<form method="post" action="">
+    {% csrf_token  %}
+   <div   class="x" style="  position: absolute; left: 300px; top: 200px;"><b  style="margin-right:2px">Roll No:</b>{{ form.rollno }}</div>
+ <div class="x" style="position: absolute; left: 300px; top: 230px;"><b>Book Id:</b>{{ form.bookid}}</div>
+    <div class="x" style="position: absolute; left: 400px; top: 260px;"><b style="margin-right:21px"><input type="submit" value="Issue" style=" color: red">
+</form>
+    </b>
+</body>
+</html>

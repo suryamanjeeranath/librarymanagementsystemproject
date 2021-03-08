@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issued Book List</title>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+    .x
+   {
+     text-align:center;
+     color: blue;
+  }
+</style>
+</head>
+<body>
+<form action="./issuedbooksearch" method="post" class="x">
+    {% csrf_token %}
+Book Name:<input type="text" name="sb">
+<input type="submit" value="Serach" style="color: blue">
+</form>
+<table>
+  <tr>
+    <th>Book Id</th>
+    <th>S. Roll No</th>
+    <th>Student Name</th>
+    <th>Book Name</th>
+    <th>Issue Date</th>
+  </tr>
+ {% for i in p%}
+        <tr>
+            <td>{{i.bookid}}</td>
+            <td>{{ i.r.rollno }}</td>
+            <td>{{ i.r.name }}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.issuedate}}</td>
+        </tr>
+ {%endfor%}
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Return Book</title>
+</head>
+<body>
+<form action="./finecal" method="post">
+    {% csrf_token %}
+    RollNo:<input type="text" name="r"><br>
+    BookId:<input type="text" name="b"><br>
+    <input type="submit" value="Search">
+</form>
+</body>
+</html>

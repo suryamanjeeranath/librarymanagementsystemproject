@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Issued BookList</title>
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>BookId</th>
+        <th>BookName</th>
+        <th>Issue Date</th>
+        <th>Fine</th>
+        <th>Status</th>
+    </tr>
+{% for i in obj%}
+
+        <tr>
+            <td>{{i.bookid}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.issuedate}}</td>
+            <form action="./issuedbookdelete" method="post">
+                {% csrf_token %}
+             <td>Delete:<input type="radio" name="de" value='{{i.r.rollno}},{{i.bookid}}'>Yes
+            <input type="radio" name="de" value="{{i.r.rollno}},9807" checked>No</td>
+         <td><input type="submit" value="Submit"></td>
+             </form>
+       </tr>
+{% endfor %}
+
+    </table>
+{% for fine in fine %}
+    <tr>
+    <td>{{fine}}</td>
+    </tr>
+{% endfor %}
+
+</body>
+</html>

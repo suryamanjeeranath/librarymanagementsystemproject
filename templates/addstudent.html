@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .x{
+            color: Red;
+            font-size: 20px;
+            margin-left: 100px;
+        }
+        </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'back2.css' %}" type="text/css">
+</head>
+<body >
+<form action="" method="post">
+    {% csrf_token %}
+    <div   class="x" style="  position: absolute; left: 300px; top: 200px;"><b style="margin-right:46px">Student Roll No:</b>{{ form.rollno}}</div>
+ <div class="x" style="position: absolute; left: 300px; top: 230px;"><b style="margin-right:63px">Student Name:</b>{{ form.name}}</div>
+ <div class="x" style="position: absolute; left: 300px; top: 260px;"><b style="margin-right:42px">Name Of Course:</b>{{ form.course}}</div>
+ <div class="x" style="position: absolute; left: 300px; top: 290px;"><b style="margin-right:5px">Current Course Year:</b>{{ form.year}}</div>
+<input type="submit" value="Submit" class="x" style="position: absolute; left: 400px; top: 330px;" />
+</form>
+</body>
+</html>

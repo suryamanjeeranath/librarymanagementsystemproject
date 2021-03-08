@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+     <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+ .x
+   {
+     text-align:center;
+     color: blue;
+  }
+    </style>
+</head>
+<body>
+<form action="./searchbook" method="post" class="x">
+    {% csrf_token %}
+Book Name:<input type="text" name="sb">
+<input type="submit" value="Serach" style="color: blue">
+</form>
+<table>
+    <tr>
+        <th>BOOK ID</th>
+        <th>BOOK NAME</th>
+        <th>ISBNO</th>
+        <th>QUANTITY</th>
+    <tr>
+{% for name in p %}
+    <tr>
+             <td>{{name.bookid}}</td>
+             <td>{{name.bookname}}</td>
+             <td>{{name.isbnno }}</td>
+             <td>{{name.quantity }}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>

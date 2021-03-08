@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .x{
+            color: red;
+            font-size: 20px;
+            margin-left: 100px;
+        }
+        </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reg.css' %}" type="text/css">
+</head>
+<body >
+<form action="" method="post">
+    {% csrf_token %}
+    <div   class="x" style="  position: absolute; left: 300px; top: 200px;"><b style="margin-right:22px">User Name:</b>{{ form.user_name }}</div>
+ <div class="x" style="position: absolute; left: 300px; top: 230px;"><b style="margin-right:35px">Password:</b>{{ form.password }}</div>
+ <div class="x" style="position: absolute; left: 300px; top: 260px;"><b style="margin-right:21px">First Name:</b>{{ form.f_name}}</div>
+ <div class="x" style="position: absolute; left: 300px; top: 290px;"><b style="margin-right:25px">Last Name:</b>{{ form.l_name}}</div>
+<div class="x" style="position: absolute; left: 300px; top: 320px;"><b >Date Of Birth:</b>{{ form.dob}}</div>
+<div class="x" style="position: absolute; left: 300px; top: 350px;"><b style="margin-right:28px">Mobile No:</b>{{ form.m_no}}</div>
+<input type="submit" value="Submit" class="x" style="position: absolute; left: 400px; top: 390px;" />
+</form>
+</body>
+</html>

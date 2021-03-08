@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .x
+        {
+            color:darkgreen;
+
+        }
+       .t {
+           position: absolute;
+           left: 300px;
+           top: 300px;
+            margin-right: 20px;
+           color: red;
+           height: 30px;
+       }
+
+       .c
+       {
+           position: absolute;
+           left: 300px;
+           top:330px;
+           margin-right: 20px;
+            color:red;
+       }
+        .e
+        {
+            position: absolute;
+           left: 410px;
+           top:390px;
+             color:blue;
+            font-size: 20px;
+
+        }
+</style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}" type="text/css">
+</head>
+<body >
+<form action=""  method="post">
+    {% csrf_token %}
+    <div class="t"><b style="margin: 30px;font-size: 26px">User Name:</b>{{ form.user_name}}</div>
+    <div class="c"><b style="margin: 36px;font-size: 26px">PassWord:</b>{{form.password}}</div>
+        <input type="submit" value="login" class="e"/>
+</form>
+</body>
+</html>
